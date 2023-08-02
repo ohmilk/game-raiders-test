@@ -33,7 +33,6 @@ export default{
 .about{
   height: calc(100vh - 180px);
   position: relative;
-  z-index: -1;
   flex-direction: column;
   background-image: url(../assets/img/backgroundImg/resbck.png);
   background-size: cover;

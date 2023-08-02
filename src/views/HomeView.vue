@@ -31,10 +31,6 @@
     max-width: 1000px;
     width: 100%;
 
-    .carousel-inner{
-      z-index: -1;
-    }
-
     img{
       width: 100%;
     }

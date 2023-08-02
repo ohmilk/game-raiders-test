@@ -26,6 +26,8 @@ const show = ref(true);
 <style lang="scss" scoped>
     .header{
         height: 70px;
+        position: relative;
+        z-index: 1;
         padding: 10px 20px;
         margin-top: 30px;
         display: flex;
