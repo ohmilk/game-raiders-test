@@ -2,16 +2,20 @@ main{
     min-height: calc(100vh - 130px);
     display: flex;
     justify-content: center;
-    align-content: center;
     flex-wrap: wrap;
 }
 .container{
-    height: 100%;
     display: flex;
-    flex: 1;
+    margin-top: 30px;
+}
+.router-link-exact-active{
+    background-color: #FDDEDE;
 }
 .bgc-pink{
     background-color: #FACECE;
+}
+.bgc-blue{
+    background-color: #BAE2F1;
 }
 .c-brown{
     color: #684242;

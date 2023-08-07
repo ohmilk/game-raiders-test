@@ -7,9 +7,9 @@ export default{
 }
 </script>
 <template>
-  <div class="container p-3 mt-3 mb-3 about">
+  <div class="container p-3 mb-3 about">
     <Title />
-    <div class="info-container">
+    <div class="info-container mt-1">
       <div class="card card-left p-3 d-shadow">
         <span class="card-title c-blue"><strong>故事起源</strong></span>
         <div class="card-info c-blue">
@@ -31,11 +31,11 @@ export default{
 
 <style lang="scss" scoped>
 .about{
-  height: calc(100vh - 180px);
+  min-height: calc(100vh - 180px);
   position: relative;
   flex-direction: column;
-  background-image: url(../assets/img/backgroundImg/resbck.png);
-  background-size: cover;
+  background-image: url(../assets/img/backgroundImg/aboutbki.png);
+  background-size: contain;
   box-shadow:3px 3px 2px rgba(0, 0, 0, 0.6);
 }
 .info-container{
@@ -46,8 +46,9 @@ export default{
 
   .card{
     width: 40%;
+    border-radius: 20px;
     position: absolute;
-    background-color: rgba(223, 244, 245, 0.8);
+    background-color: rgba(252, 255, 255, 0.5);
   }
 
   .card-left{
@@ -63,6 +64,19 @@ export default{
       animation-name: slide-right;
       animation-duration: 3s;
   }
+  @media screen and (max-width: 992px) {
+    .card{
+      width: 100%;
+      position: static;
+      animation: info-opacity 3s;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .info-container{
+      justify-content: space-around;
+      align-content: center;
+    }
 }
 
 @keyframes slide-left{
@@ -82,5 +96,13 @@ export default{
     to{
       right:5%;
     }
+}
+@keyframes info-opacity {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
 }
 </style>

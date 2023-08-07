@@ -1,7 +1,26 @@
 <script setup>
-import { ref } from "vue";
+import {  onMounted, ref } from "vue";
 
 const show = ref(true);
+let windowWidth = ref(window.innerWidth);
+onMounted(() => {
+    if (windowWidth.value < 710){
+            show.value = false;
+        }else{
+            show.value = true;
+        }
+    window.onresize = () => {
+        windowWidth.value = window.innerWidth;
+        if (windowWidth.value < 710){
+            show.value = false;
+        }else{
+            show.value = true;
+        }
+    }
+})
+const changeShow = () => {
+    show.value = !show.value;
+}
 </script>
 
 <template>
@@ -11,12 +30,13 @@ const show = ref(true);
             <div id="logo" class="d-shadow">
                 <img src="../assets/img/logo.png" alt="">
             </div>
+            <button class="nav-btn" @click="changeShow"><i class="fa-solid fa-bars"></i></button>
             <div class="nav-links" v-show="show">
-                <button class="nav-btn cancel"></button>
+                <button class="nav-btn cancel" @click="changeShow"></button>
                 <router-link to="/" class="nav-link c-brown">首頁</router-link>
                 <router-link to="/about" class="nav-link c-brown">關於礦石鎮</router-link>
-                <a class="nav-link c-brown">戀愛對象</a>
-                <a class="nav-link c-brown">礦石鎮居民</a>
+                <router-link to="/chara" class="nav-link c-brown">戀愛對象</router-link>
+                <router-link to="/resident" class="nav-link c-brown">礦石鎮居民</router-link>
                 <a class="nav-link c-brown">經營牧場</a>
                 <a class="nav-link c-brown">節日介紹</a>
             </div>
@@ -57,37 +77,43 @@ const show = ref(true);
             }
             @media screen and (max-width: 710px) {
                 #logo{
-                    position: relative;
+                    position: static;
                     height: 100%;
+                    img{
+                        width: auto;
+                        height: 100%;
+                    }
                 }
             }
 
+            .nav-btn{
+                display: none;
+                background-color: #F7A5A5;
+                position: absolute;
+                top: 10px;
+                right: 5px;
+            }
+
             .nav-links{
-                padding: 5px 10px 5px 50px;
+                padding: 10px 10px 10px 50px;
                 border-radius: 5px;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
 
                 .cancel{
-                    display: none;
                     width: 25px;
                     height: 25px;
                     border: none;
                     background-image: url(../assets/img/header/navBtn.jpg);
                     background-size: cover;
-                    position: absolute;
                     top: 5px;
-                    right: 5px;
+                    
                 }
 
-                @media screen and (max-width: 710px) {
-                .cancel{
-                    display: block;
-                }
-            }
+                
                 .nav-link{
-                    padding: 10px 20px;
+                    padding: 5px 20px;
 
                     &:hover{
                         border-bottom: #F7A5A5 3px solid;
@@ -115,8 +141,12 @@ const show = ref(true);
         @media screen and (max-width: 710px) {
                 .nav{
                     width: 100%;
+                    
+                .nav-btn{
+                    display: block;
                 }
             }
+                }
     }
     
 </style>

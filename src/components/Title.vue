@@ -29,4 +29,9 @@
       }
     }
 }
+@media screen and (max-width: 992px) {
+      .title{
+        width: 80%;
+      }
+    }
 </style>
