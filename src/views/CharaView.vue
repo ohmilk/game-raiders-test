@@ -91,8 +91,8 @@ const filterInfo = computed(() => {
 <template>
   <div class="container chara mb-5 p-3 d-shadow">
     <Title>戀愛對象</Title>
-    <div class="chara-cards p-3 d-shadow">
-        <button type="button" class="card" v-for="(item,index) of charas"
+    <div class="chara-cards d-flex p-3 d-shadow">
+        <button type="button" class="card d-flex" v-for="(item,index) of charas"
          :key="item"  data-bs-toggle="modal" data-bs-target="#Modal"
          @click="clickChara(item)">
             <img class="card-img" :src="require(`../assets/img/chara/chara-img${index + 1}.png`)" :alt="item">
@@ -102,7 +102,7 @@ const filterInfo = computed(() => {
   </div>
   <Modal>
     <template #header v-if="filterInfo.length > 0">{{ filterInfo[0].name }}</template>
-    <div class="chara-info-card" v-if="filterInfo.length > 0">
+    <div class="chara-info-card d-flex" v-if="filterInfo.length > 0">
         <div class="chara-info">
             <div class="info">
                 <strong class="c-blue">特別喜歡：</strong><p class="c-blue">{{ filterInfo[0].mostFav }}</p>
@@ -136,14 +136,12 @@ const filterInfo = computed(() => {
 }
 .chara-cards{
     width: 100%;
-    display: flex;
     justify-content: space-around;
 }
         .card{
             width: 15%;
             max-height: 80%;
             background-color: rgba(252, 237, 237, 0.6);
-            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -164,7 +162,6 @@ const filterInfo = computed(() => {
             opacity: 1;
         }
 .chara-info-card{
-    display: flex;
     justify-content: center;
     .chara-info{
         .info{

@@ -60,185 +60,210 @@ const resPlaces = ref([
     eName: "ox"
   },
   {
-    name: "哥茨家",
+    name: "哥茲家",
     eName: "wood"
   }
 ])
 const residents = ref([
   {
     number: 1,
-    place: "grandma",
+    place: "艾蓮家",
     name: "艾蓮",
     birth: "冬13",
-    identity: "艾麗奶奶"
+    identity: "艾麗奶奶",
+    fav: "首飾、小麥粉"
   },
   {
     number: 2,
-    place: "grandma",
+    place: "艾蓮家",
     name: "優",
     birth: "秋5",
-    identity: "艾麗弟弟"
+    identity: "艾麗弟弟",
+    fav: "草莓牛奶、甜食"
   },
   {
     number: 3,
-    place: "mayor",
+    place: "鎮長家",
     name: "托馬斯",
     birth: "夏25",
-    identity: "鎮長"
+    identity: "鎮長",
+    fav: "酒"
   },
   {
     number: 4,
-    place: "mayor",
+    place: "鎮長家",
     name: "哈里斯",
     birth: "夏4",
-    identity: "巡警"
+    identity: "巡警",
+    fav: "麵包、飯團"
   },
   {
     number: 5,
-    place: "grocery",
+    place: "雜貨店",
     name: "莎夏",
     birth: "春30",
-    identity: "雜貨店老闆娘"
+    identity: "雜貨店老闆娘",
+    fav: "巧克力、蛋糕"
   },
   {
     number: 6,
-    place: "grocery",
+    place: "雜貨店",
     name: "傑夫",
     birth: "冬29",
-    identity: "雜貨店老闆"
+    identity: "雜貨店老闆",
+    fav: "菜、果汁、任何健康食品"
   },
   {
     number: 7,
-    place: "hospital",
+    place: "醫院",
     name: "多特",
     birth: "秋19",
-    identity: "醫生"
+    identity: "醫生",
+    fav: "藥材"
   },
   {
     number: 8,
-    place: "church",
+    place: "教堂",
     name: "卡特",
     birth: "秋20",
-    identity: "牧師"
+    identity: "牧師",
+    fav: "草莓牛奶"
   },
   {
     number: 9,
-    place: "elves",
+    place: "小矮人家",
     name: "小矮人們",
     birth: "",
-    identity: "玩家小幫手"
+    identity: "玩家小幫手",
+    fav: "小麥粉、蜂蜜"
   },
   {
     number: 10,
-    place: "orchard",
+    place: "果樹園",
     name: "瑪娜",
     birth: "秋11",
-    identity: "果樹園老闆娘"
+    identity: "果樹園老闆娘",
+    fav: "魚"
   },
   {
     number: 11,
-    place: "orchard",
+    place: "果樹園",
     name: "狄克",
     birth: "冬15",
-    identity: "果樹園主人"
+    identity: "果樹園主人",
+    fav: "酒、料理"
   },
   {
     number: 12,
-    place: "orchard",
+    place: "果樹園",
     name: "克里夫",
     birth: "夏6",
-    identity: "果樹園臨時工"
+    identity: "果樹園臨時工",
+    fav: "磨菇飯、松茸飯、三明治"
   },
   {
     number: 13,
-    place: "hostel",
+    place: "旅館",
     name: "達特",
     birth: "冬11",
-    identity: "旅館老闆"
+    identity: "旅館老闆",
+    fav: "麵包"
   },
   {
     number: 14,
-    place: "forging",
+    place: "鍛製屋",
     name: "賽巴拉",
     birth: "春8",
-    identity: "鍛製屋老闆"
+    identity: "鍛製屋老闆",
+    fav: "飯團、貴礦石"
   },
   {
     number: 15,
-    place: "forging",
+    place: "鍛製屋",
     name: "格雷",
     birth: "冬6",
-    identity: "鍛製屋少年"
+    identity: "鍛製屋少年",
+    fav: "礦石"
   },
   {
     number: 16,
-    place: "ocean",
+    place: "海之家",
     name: "凱",
     birth: "夏22",
-    identity: "海之家店主"
+    identity: "海之家店主",
+    fav: "魚、酒"
   },
   {
     number: 17,
-    place: "zack",
+    place: "札克家",
     name: "札克",
     birth: "夏29",
-    identity: "出貨業者"
+    identity: "出貨業者",
+    fav: "烏冬、魚"
   },
   {
     number: 18,
-    place: "zack",
+    place: "札克家",
     name: "霍安",
     birth: "冬19",
-    identity: "中國商人"
+    identity: "中國商人",
+    fav: "海盜之寶、古代化石魚"
   },
   {
     number: 19,
-    place: "chicken",
+    place: "養雞場",
     name: "莉莉婭",
     birth: "春19",
-    identity: "養雞場老闆娘"
+    identity: "養雞場老闆娘",
+    fav: "草莓牛奶、粥"
   },
   {
     number: 20,
-    place: "chicken",
+    place: "養雞場",
     name: "里克",
     birth: "秋27",
-    identity: "莉莉婭兒子"
+    identity: "莉莉婭兒子",
+    fav: "雞飼料、酒"
   },
   {
     number: 21,
-    place: "ox",
+    place: "牛羊牧場",
     name: "穆奇",
     birth: "春17",
-    identity: "牛羊牧場主人"
+    identity: "牛羊牧場主人",
+    fav: "粥、溫泉蛋"
   },
   {
     number: 22,
-    place: "ox",
+    place: "牛羊牧場",
     name: "梅",
     birth: "冬26",
-    identity: "穆奇孫女"
+    identity: "穆奇孫女",
+    fav: "草莓牛奶、甜食"
   },
   {
     number: 23,
-    place: "wood",
+    place: "哥茲家",
     name: "哥茲",
     birth: "秋2",
-    identity: "木工"
+    identity: "木工",
+    fav: "資材"
   },
   {
     number: 24,
-    place: "anna",
+    place: "安娜家",
     name: "安娜",
     birth: "秋23",
-    identity: "瑪莉母親"
+    identity: "瑪莉母親",
+    fav: "巧克力、小麥粉、油"
   },
   {
     number: 25,
-    place: "anna",
+    place: "安娜家",
     name: "巴吉爾",
     birth: "夏11",
-    identity: "植物研究家"
+    identity: "植物研究家",
+    fav: "植物"
   },
 ])
 const place = ref("");
@@ -256,13 +281,13 @@ const filterRes = computed(() => {
     <div class="map-container mt-3">
             <div class="map">
               <button v-for="res of resPlaces" class="place" :class="res.eName" :title="res.name"
-              :key="res.eName" @click="clickPlace(res.eName)"
+              :key="res.eName" @click="clickPlace(res.name)"
               data-bs-toggle="modal" data-bs-target="#Modal"></button>
             </div>
         </div>
   </div>
   <Modal>
-    <template #header>居民介紹</template>
+    <template #header>{{ place }}</template>
     <div class="res-cotent" v-if="filterRes.length > 0">
       <div v-for="info of filterRes" :key="info.name" class="card p-3">
         <div class="card-img">
@@ -274,6 +299,7 @@ const filterRes = computed(() => {
           </div>
           <span v-if="info.birth">生日：{{ info.birth }}</span>
           <span>身分：{{ info.identity }}</span>
+          <span>喜歡：{{ info.fav}}</span>
         </div>
       </div>
     </div>

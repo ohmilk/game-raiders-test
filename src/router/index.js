@@ -2,6 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CharaView from "../views/CharaView.vue";
 import ResidentView from "@/views/ResidentView.vue";
+import ManageView from "@/views/ManageView.vue";
+import IndexView from "@/views/Manage/IndexView.vue";
+import AnimalView from "@/views/Manage/AnimalView.vue";
+import PlantView from "@/views/Manage/PlantView.vue";
+import MiningView from "@/views/Manage/MiningView.vue";
+import AnglingView from "@/views/Manage/AnglingView.vue";
+
 
 const routes = [
   {
@@ -26,6 +33,33 @@ const routes = [
     path: '/resident',
     name: 'resident',
     component: ResidentView
+  },
+  {
+    path: '/manage',
+    name: 'manage',
+    component: ManageView,
+    children: [
+      {
+        path: '',
+        component: IndexView
+      },
+      {
+        path: 'animal',
+        component: AnimalView
+      },
+      {
+        path: 'plant',
+        component: PlantView
+      },
+      {
+        path: 'mining',
+        component: MiningView
+      },
+      {
+        path: 'angling',
+        component: AnglingView
+      },
+    ]
   },
 ]
 

@@ -37,7 +37,7 @@ const changeShow = () => {
                 <router-link to="/about" class="nav-link c-brown">關於礦石鎮</router-link>
                 <router-link to="/chara" class="nav-link c-brown">戀愛對象</router-link>
                 <router-link to="/resident" class="nav-link c-brown">礦石鎮居民</router-link>
-                <a class="nav-link c-brown">經營牧場</a>
+                <router-link to="/manage" class="nav-link c-brown">經營牧場</router-link>
                 <a class="nav-link c-brown">節日介紹</a>
             </div>
         </div>

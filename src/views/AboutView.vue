@@ -7,9 +7,9 @@ export default{
 }
 </script>
 <template>
-  <div class="container p-3 mb-3 about">
+  <div class="container p-3 mb-3 about flex-column">
     <Title />
-    <div class="info-container mt-1">
+    <div class="info-container d-flex flex-column mt-1">
       <div class="card card-left p-3 d-shadow">
         <span class="card-title c-blue"><strong>故事起源</strong></span>
         <div class="card-info c-blue">
@@ -33,15 +33,12 @@ export default{
 .about{
   min-height: calc(100vh - 180px);
   position: relative;
-  flex-direction: column;
   background-image: url(../assets/img/backgroundImg/aboutbki.png);
   background-size: contain;
   box-shadow:3px 3px 2px rgba(0, 0, 0, 0.6);
 }
 .info-container{
   height: 100%;
-  display: flex;
-  flex-direction: column;
   position: relative;
 
   .card{
