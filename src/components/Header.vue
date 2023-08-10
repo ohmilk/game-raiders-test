@@ -24,7 +24,7 @@ const changeShow = () => {
 </script>
 
 <template>
-    <div class="header">
+    <div class="header" id="header">
         <!-- <img id="RWD-logo" class="d-shadow" src="../assets/img/logo.png" alt=""> -->
         <div class="nav bgc-pink d-shadow">
             <div id="logo" class="d-shadow">
@@ -45,13 +45,13 @@ const changeShow = () => {
 </template>
 <style lang="scss" scoped>
     .header{
-        height: 70px;
+        height: 100px;
         position: relative;
         z-index: 1;
         padding: 10px 20px;
-        margin-top: 30px;
         display: flex;
         justify-content: center;
+        align-items: flex-end;
         .nav{
             display: flex;
             justify-content: center;

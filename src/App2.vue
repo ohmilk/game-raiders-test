@@ -10,19 +10,44 @@ export default {
 }
 </script>
 <template>
-    <Header />
+    <Header id="header" />
     <main>
-       <router-view/> 
+       <router-view/>
+       <a class="back-top" href="#header">
+        <span>☝</span>
+       </a>
     </main>
     <Footer />
 </template>
-<style>
+<style lang="scss">
 body {
     box-sizing: border-box;
     background-image: url(../src/assets/img/backgroundImg/bigbck.jpg);
     margin: 0;
-}
 
+    main{
+        .back-top{
+            width: 30px;
+            height: 30px;
+            background-color: rgb(255, 255, 255, .1);
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+
+            &:hover{
+                animation: top 1s infinite;
+            }
+        }
+    }
+}
+@keyframes top {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-10px);
+    }
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
