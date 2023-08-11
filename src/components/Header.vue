@@ -53,6 +53,7 @@ const changeShow = () => {
         justify-content: center;
         align-items: flex-end;
         .nav{
+            height: 60px;
             display: flex;
             justify-content: center;
             align-content: center;
