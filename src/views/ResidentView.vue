@@ -277,7 +277,7 @@ const filterRes = computed(() => {
 
 <template>
   <div class="container resident">
-    <Title>礦石鎮居民</Title>
+    <Title>礦石鎮居民(點擊圖片房屋)</Title>
     <div class="map-container mt-3">
             <div class="map">
               <button v-for="res of resPlaces" class="place" :class="res.eName" :title="res.name"

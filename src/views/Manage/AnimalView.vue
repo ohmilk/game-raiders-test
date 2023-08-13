@@ -15,18 +15,18 @@ const clickAnimalHandler = (animal, index) => {
 
 <template>
   <div class="warp">
-    <h4>關於餵食飼料和放牧</h4>
+    <h4 class="c-brown d-shadow">關於餵食飼料和放牧</h4>
     <p>在晴天放牧的話，動物不僅當日不用餵食並可大幅增加愛心度，<br>
       另外動物餵食飼料使用「手拿餵食」等同「放在飼料盆」裡<br>
       只是，「手拿餵食」給動物飼料可以再另外提高愛心度，純粹「放在飼料盆」則不會增加。<br>
       放牧的話超過5小時可以增加愛心度並不用餵食飼料。<br>
       補充一點冬天只有雞、安哥拉兔可放牧獲得飼料，其餘的動物雖可獲得放牧時數但卻無法獲得飼料。</p>
-    <h4>關於畜產品</h4>
+    <h4 class="c-brown d-shadow">關於畜產品</h4>
     <p>動物過度放牧會導致冠軍動物無法獲得應有的(G類)產品。<br>
       譬如8心冠軍雞本可產金蛋，但如果超過放牧1000小時就會直接提升為白金蛋(P類)，<br>
       雖然售價(P類)比(G類)高，但未來就沒有(G類)的出貨量了，<br>
       所以放牧需考慮產品的獲得。</p>
-    <h4>動物們</h4>
+    <h4 class="c-brown d-shadow">動物們</h4>
     <div class="animal-cards d-flex p-3 d-shadow">
         <button type="button" class="card d-flex" data-bs-toggle="modal" data-bs-target="#Modal" 
         v-for="(animal,index) of animals" :key="animal" @click="clickAnimalHandler(animal, index)">
@@ -37,8 +37,9 @@ const clickAnimalHandler = (animal, index) => {
     <Modal>
     <template #header>{{ clickAnimal.name }}</template>
     <div class="info-card d-flex">
-        <div class="info-img d-shadow">
-          <img :src="require(`@/assets/img/manage/animal/animalInfo${clickAnimal.number}.png`)" :alt="clickAnimal.name">
+        <div class="info-img">
+          <img v-if="clickAnimal.number"
+          :src="require(`@/assets/img/manage/animal/animalInfo${clickAnimal.number}.png`)" :alt="clickAnimal.name">
         </div>
     </div>
   </Modal>
