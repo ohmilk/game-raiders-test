@@ -89,7 +89,7 @@ const filterInfo = computed(() => {
 </script>
 
 <template>
-  <div class="container chara mb-5 p-3 d-shadow">
+  <div class="wrap chara mb-5 p-3 d-shadow">
     <Title>戀愛對象</Title>
     <div class="chara-cards d-flex p-3 d-shadow">
         <button type="button" class="card d-flex" v-for="(item,index) of charas"

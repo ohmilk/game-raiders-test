@@ -276,9 +276,9 @@ const filterRes = computed(() => {
 </script>
 
 <template>
-  <div class="container resident">
+  <div class="wrap resident p-3">
     <Title>礦石鎮居民(點擊圖片房屋)</Title>
-    <div class="map-container mt-3">
+    <div class="map-wrap mt-3">
             <div class="map">
               <button v-for="res of resPlaces" class="place" :class="res.eName" :title="res.name"
               :key="res.eName" @click="clickPlace(res.name)"
@@ -309,10 +309,9 @@ const filterRes = computed(() => {
 
 <style lang="scss" scoped>
 .resident{
-    width: 100%;
     height: 100%;
     flex-wrap: wrap;
-    .map-container{
+    .map-wrap{
       width: 80%;
       max-width: 890px;
       height: 44.6vw;

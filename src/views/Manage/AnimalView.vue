@@ -14,7 +14,7 @@ const clickAnimalHandler = (animal, index) => {
 </script>
 
 <template>
-  <div class="warp">
+  <div class="content p-3 d-shadow">
     <h4 class="c-brown d-shadow">關於餵食飼料和放牧</h4>
     <p>在晴天放牧的話，動物不僅當日不用餵食並可大幅增加愛心度，<br>
       另外動物餵食飼料使用「手拿餵食」等同「放在飼料盆」裡<br>
@@ -48,8 +48,10 @@ const clickAnimalHandler = (animal, index) => {
 </template>
 
 <style lang="scss" scoped>
-.warp{
+.content{
   width: 100%;
+  border-radius: 10px;
+  background-image: url(@/assets/img/backgroundImg/manage.jpg);
 
   h4{
     width: 100%;

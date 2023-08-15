@@ -37,7 +37,7 @@ const curseTools = ref([
 </script>
 
 <template>
-  <div class="warp">
+  <div class="content">
     <!-- 頁籤 -->
     <ul class="nav nav-tabs justify-content-center" role="tablist">
       <li class="nav-item" role="presentation">
@@ -153,7 +153,7 @@ const curseTools = ref([
 </template>
 
 <style lang="scss" scoped>
-.warp{
+.content{
   width: 100%;
   background-color: #fff;
   

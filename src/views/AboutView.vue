@@ -7,9 +7,9 @@ export default{
 }
 </script>
 <template>
-  <div class="container p-3 mb-3 about flex-column">
+  <div class="wrap p-3 mb-3 about">
     <Title />
-    <div class="info-container d-flex flex-column mt-1">
+    <div class="info-wrap d-flex flex-column mt-1">
       <div class="card card-left p-3 d-shadow">
         <span class="card-title c-blue"><strong>故事起源</strong></span>
         <div class="card-info c-blue">
@@ -37,7 +37,8 @@ export default{
   background-size: contain;
   box-shadow:3px 3px 2px rgba(0, 0, 0, 0.6);
 }
-.info-container{
+.info-wrap{
+  width: 100%;
   height: 100%;
   position: relative;
 
@@ -70,7 +71,7 @@ export default{
   }
 }
 @media screen and (max-width: 992px) {
-  .info-container{
+  .info-wrap{
       justify-content: space-around;
       align-content: center;
     }

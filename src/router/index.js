@@ -8,6 +8,7 @@ import AnimalView from "@/views/Manage/AnimalView.vue";
 import PlantView from "@/views/Manage/PlantView.vue";
 import MiningView from "@/views/Manage/MiningView.vue";
 import AnglingView from "@/views/Manage/AnglingView.vue";
+import FestivalView from "@/views/FestivalView.vue";
 
 
 const routes = [
@@ -60,6 +61,11 @@ const routes = [
         component: AnglingView
       },
     ]
+  },
+  {
+    path: '/festival',
+    name: 'festival',
+    component: FestivalView
   },
 ]
 

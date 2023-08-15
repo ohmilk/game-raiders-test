@@ -63,7 +63,7 @@ const notFishs = ref([
 </script>
 
 <template>
-  <div class="warp">
+  <div class="content">
     <!-- 頁籤 -->
     <ul class="nav nav-tabs justify-content-center" role="tablist">
       <li class="nav-item" role="presentation">
@@ -115,7 +115,7 @@ const notFishs = ref([
       </li>
     </ul>
     <!-- 區塊內容 -->
-    <div class="tab-content" id="myTabContent">
+    <div class="tab-content d-shadow p-3" id="myTabContent">
       <!-- 蓄力等級 -->
       <div
         class="tab-pane fade show active"
@@ -198,12 +198,13 @@ const notFishs = ref([
 </template>
 
 <style lang="scss" scoped>
-.warp{
+.content{
   width: 100%;
   background-color: #fff;
   
   .tab-content{
-    padding: 5px;
+    background-image: url(@/assets/img/backgroundImg/manage.jpg);
+    border-radius: 10px;
   }
 }
 .nav-link{
@@ -219,5 +220,8 @@ thead tr{
 }
 tbody tr:nth-child(2n){
   background-color: rgb(219, 233, 246);
+}
+tbody tr:nth-child(2n-1){
+  background-color: #fff;
 }
 </style>

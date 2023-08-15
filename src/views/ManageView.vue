@@ -3,7 +3,7 @@ import Title from "@/components/Title.vue";
 </script>
 
 <template>
-  <div class="container manage p-3">
+  <div class="wrap manage p-3">
     <Title>經營牧場</Title>
     <nav class="d-flex">
       <router-link to="/manage/animal" class="link d-flex fs-5 fw-bold px-3 py-2">畜牧</router-link>
