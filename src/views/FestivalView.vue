@@ -6,6 +6,7 @@ let nowStarDay = ref(NaN);
 let nowStarDayArray = ref([]);
 let lastgrids = ref(NaN);
 let lastgridsArray = ref([]);
+let filterSeason = ref([])
 const weeks = ref(["日", "一", "二", "三", "四", "五", "六"]);
 const seasons = ref([
   {
@@ -191,10 +192,14 @@ const changeSeason = (action) => {
       seasons.value[(currentSeasonIndex + 1) % seasons.value.length].name;
   }
 };
+const filterNowfestival = computed(() => {
+  return festivals.value.filter(f => f.season === nowSeason.value) 
+})
+
+filterSeason.value = filterNowfestival.value[0].fes
+
 const filterFestival = (num) => {
-    return festivals.value.filter((festival) => {
-        return festival.season === nowSeason.value && festival.fes.find(f => f.date === num)
-    })
+    return filterSeason.value.filter(f => f.date === num)
 };
 </script>
 
@@ -223,7 +228,7 @@ const filterFestival = (num) => {
             <div class="grid" v-for="num of 30" :key="num">
               <button class="grid-btn d-flex">
                 <span class="date">{{ num }}</span>
-                <span @load="filterFestival(num)">*</span>
+                <span v-if="filterFestival(num).length > 0">*</span>
               </button>
             </div>
             <div
