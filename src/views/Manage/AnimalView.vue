@@ -48,7 +48,8 @@ const clickAnimalHandler = (animal, index) => {
         <span class="card-name">{{ animal }}</span>
       </button>
     </div>
-    <Modal>
+  </div>
+  <Modal>
       <template #header>{{ clickAnimal.name }}</template>
       <div class="info-card d-flex">
         <div class="info-img">
@@ -62,7 +63,6 @@ const clickAnimalHandler = (animal, index) => {
         </div>
       </div>
     </Modal>
-  </div>
 </template>
 
 <style lang="scss" scoped>

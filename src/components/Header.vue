@@ -142,12 +142,18 @@ const changeShow = () => {
         @media screen and (max-width: 710px) {
                 .nav{
                     width: 100%;
+                    height: 50px;
                     
                 .nav-btn{
                     display: block;
                 }
             }
                 }
+    }
+    @media screen and (max-width: 710px) {
+        .header{
+            height: 70px;
+        }
     }
     
 </style>

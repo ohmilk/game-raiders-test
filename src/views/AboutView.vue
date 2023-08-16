@@ -1,10 +1,10 @@
 <script>
 import Title from "@/components/Title.vue";
-export default{
+export default {
   components: {
     Title,
-  }
-}
+  },
+};
 </script>
 <template>
   <div class="wrap p-3 mb-3 about">
@@ -13,16 +13,17 @@ export default{
       <div class="card card-left p-3 d-shadow">
         <span class="card-title c-blue"><strong>故事起源</strong></span>
         <div class="card-info c-blue">
-          兒時的暑假，主角曾造訪老爺爺的牧場，<br>在大自然中生活、和動物們相處等等，<br>度過了一段在都市體驗不到的生活。<br>
-          十幾年後，主角再次來到了「礦石鎮」，<br>然而等待他的卻是因為老爺爺的離世，<br>而變得淒涼林亂的荒廢牧場。<br>
-          於是主角下定決心，<br>要將這裡恢復成當時那座溫暖的牧場。</div>
+          兒時的暑假，<br />主角曾造訪老爺爺的牧場，<br />在大自然中生活、和動物們相處等等，<br />度過了一段在都市體驗不到的生活。<br />
+          十幾年後，主角再次來到了「礦石鎮」，<br />然而等待他的卻是因為老爺爺的離世，<br />而變得淒涼林亂的荒廢牧場。<br />
+          於是主角下定決心，<br />要將這裡恢復成當時那座溫暖的牧場。
+        </div>
       </div>
       <div class="card card-right p-3 d-shadow">
         <span class="card-title c-blue"><strong>遊戲介紹</strong></span>
         <div class="card-info c-blue">
-          這是一款模擬經營＋戀愛養成的遊戲，<br>透過飼養牲畜、種植、釣魚、挖礦等動作來獲取物品，<br>並販售加以賺取遊戲幣，<br>
-          利用送禮及觸發事件等機制與心儀對象培養好感度，<br>還可以和礦石鎮上居民談戀愛、結婚。<br>
-          此外，玩家可以在礦場挖礦、泡溫泉，<br>請小矮人們幫忙做農活，與居民互動，體驗牧場生活等。
+          這是一款模擬經營＋戀愛養成的遊戲，<br />透過飼養牲畜、種植、釣魚、挖礦等動作來獲取物品，<br />並販售加以賺取遊戲幣，<br />
+          利用送禮及觸發事件等機制與心儀對象培養好感度，<br />還可以和礦石鎮上居民談戀愛、結婚。<br />
+          此外，玩家可以在礦場挖礦、泡溫泉，<br />請小矮人們幫忙做農活，與居民互動，體驗牧場生活等。
         </div>
       </div>
     </div>
@@ -30,76 +31,83 @@ export default{
 </template>
 
 <style lang="scss" scoped>
-.about{
+.about {
   min-height: calc(100vh - 180px);
   position: relative;
   background-image: url(../assets/img/backgroundImg/aboutbki.png);
   background-size: contain;
-  box-shadow:3px 3px 2px rgba(0, 0, 0, 0.6);
-}
-.info-wrap{
-  width: 100%;
-  height: 100%;
-  position: relative;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6);
+  .info-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
 
-  .card{
-    width: 40%;
-    border-radius: 20px;
-    position: absolute;
-    background-color: rgba(252, 255, 255, 0.5);
-  }
+    .card {
+      width: 40%;
+      border-radius: 20px;
+      position: absolute;
+      background-color: rgba(255, 232, 219, 0.8);
 
-  .card-left{
-    left: 5%;
-    top: 5%;
-    animation-name: slide-left;
-    animation-duration: 3s;
-  }
+      @media screen and (max-width: 592px) {
+        .card-info{
+          text-align: left;
+        }
+      }
+    }
 
-  .card-right{
+    .card-left {
+      left: 5%;
+      top: 5%;
+      animation-name: slide-left;
+      animation-duration: 3s;
+    }
+
+    .card-right {
       right: 5%;
       bottom: 5%;
       animation-name: slide-right;
       animation-duration: 3s;
-  }
-  @media screen and (max-width: 992px) {
-    .card{
-      width: 100%;
-      position: static;
-      animation: info-opacity 3s;
+    }
+    @media screen and (max-width: 992px) {
+      .card {
+        width: 100%;
+        margin: 10px 0;
+        position: static;
+        animation: info-opacity 3s;
+      }
     }
   }
-}
-@media screen and (max-width: 992px) {
-  .info-wrap{
-      justify-content: space-around;
-      align-content: center;
-    }
 }
 
-@keyframes slide-left{
-    from{
-      left:-100px;
-      opacity: 0;
-    }
-    to{
-      left:5%;
-    }
+@media screen and (max-width: 710px) {
+  .about{
+    margin-top: 0;
+  }
 }
-@keyframes slide-right{
-    from{
-      right:-100px;
-      opacity: 0;
-    }
-    to{
-      right:5%;
-    }
-}
-@keyframes info-opacity {
-  from{
+
+@keyframes slide-left {
+  from {
+    left: -100px;
     opacity: 0;
   }
-  to{
+  to {
+    left: 5%;
+  }
+}
+@keyframes slide-right {
+  from {
+    right: -100px;
+    opacity: 0;
+  }
+  to {
+    right: 5%;
+  }
+}
+@keyframes info-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }

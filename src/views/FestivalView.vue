@@ -4,6 +4,7 @@ import { computed, ref, watch } from "vue";
 let nowSeason = ref("春");
 let nowStarDay = ref(NaN);
 let nowStarDayArray = ref([]);
+const nowFes = ref([])
 let lastgrids = ref(NaN);
 let lastgridsArray = ref([]);
 let filterSeason = ref([])
@@ -193,14 +194,19 @@ const changeSeason = (action) => {
   }
 };
 const filterNowfestival = computed(() => {
-  return festivals.value.filter(f => f.season === nowSeason.value) 
+  filterSeason.value = festivals.value.filter(f => f.season === nowSeason.value) 
+  return filterSeason.value[0].fes
 })
 
-filterSeason.value = filterNowfestival.value[0].fes
 
 const filterFestival = (num) => {
-    return filterSeason.value.filter(f => f.date === num)
+  return filterNowfestival.value.filter(f => f.date === num)
 };
+
+const showFestival = (num) => {
+  nowFes.value = filterNowfestival.value.filter(f => f.date === num);
+}
+watch(nowSeason, () => nowFes.value = [])
 </script>
 
 <template>
@@ -226,9 +232,9 @@ const filterFestival = (num) => {
               :key="nowStarDay"
             ></div>
             <div class="grid" v-for="num of 30" :key="num">
-              <button class="grid-btn d-flex">
+              <button class="grid-btn d-flex" @click="showFestival(num)">
                 <span class="date">{{ num }}</span>
-                <span v-if="filterFestival(num).length > 0">*</span>
+                <img v-if="filterFestival(num).length > 0" src="@/assets/img/festival/balloon.png"/>
               </button>
             </div>
             <div
@@ -236,6 +242,14 @@ const filterFestival = (num) => {
               v-for="lastgrid of lastgridsArray"
               :key="lastgrid"
             ></div>
+          </div>
+          <div class="fes" v-if="nowFes">
+            <div class="info d-flex" v-for="fes of nowFes" :key="fes">
+              <h5>{{ fes.name }}</h5>
+              <span v-if="fes.place">地點：{{ fes.place }}</span>
+              <span v-if="fes.time">時間：{{ fes.time }}</span>
+              <span v-if="fes.info">{{ fes.info }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -248,8 +262,9 @@ const filterFestival = (num) => {
   flex-direction: column;
 
   .calendar {
-    width: 60%;
-    height: 60vh;
+    width: 100%;
+    max-width: 760px;
+    height: 65vh;
     margin: 0 auto;
     .title {
       width: 100%;
@@ -271,6 +286,7 @@ const filterFestival = (num) => {
     .body {
       width: 100%;
       height: 90%;
+      padding: 5px;
       background-color: #e7e9cc;
       border: 5px solid #c0be9f;
       border-radius: 10px;
@@ -278,8 +294,8 @@ const filterFestival = (num) => {
         height: 10%;
         justify-content: space-around;
         .week {
-            width: 12%;
-            color: #fff;
+          width: 12%;
+          color: #fff;
           background-color: #d6921c;
           border-radius: 10px;
           margin: 5px 0;
@@ -295,12 +311,12 @@ const filterFestival = (num) => {
         }
       }
       .days {
-        height: 60%;
+        height: 65%;
         flex-wrap: wrap;
         justify-content: space-around;
         .grid {
           width: 12%;
-          height: 15%;
+          height: 12%;
           background-color: #E0CA68;
           border-radius: 10px;
           margin: 5px;
@@ -318,9 +334,24 @@ const filterFestival = (num) => {
             .date{
                 color: #7F592F;
             }
+            img{
+              width: 40%;
+              margin-left: auto;
+            }
           }
         }
       }
+      .fes{
+          height: 25%;
+          .info{
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            span, h5{
+              color: #7F592F;
+            }
+          }
+        }
     }
   }
   button {

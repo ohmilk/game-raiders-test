@@ -95,7 +95,7 @@ const filterInfo = computed(() => {
         <button type="button" class="card d-flex" v-for="(item,index) of charas"
          :key="item"  data-bs-toggle="modal" data-bs-target="#Modal"
          @click="clickChara(item)">
-            <img class="card-img" :src="require(`../assets/img/chara/chara-img${index + 1}.png`)" :alt="item">
+            <img class="img" :src="require(`../assets/img/chara/chara-img${index + 1}.png`)" :alt="item">
             <span class="card-name">{{ item }}</span>
         </button>
     </div>
@@ -150,15 +150,15 @@ const filterInfo = computed(() => {
             padding: 5px;
             opacity: 0;
         }
-        .card-img{
+        .img{
             max-width: 70%;
             max-height: 80%;
             filter: saturate(0) brightness(0) contrast(0);
         }
-        .card-img:hover{
+        .img:hover{
             filter: brightness(1) contrast(1) saturate(1);
         }
-        .card-img:hover+span{
+        .img:hover+span{
             opacity: 1;
         }
 .chara-info-card{
