@@ -10,6 +10,12 @@ main{
     flex-wrap: wrap;
     margin-top: 30px;
 }
+@media screen and (max-width: 710px) {
+    .wrap{
+      margin-top: 0;
+      width: 100%;
+    }
+  }
 /* .router-link-exact-active{
     background-color: #FDDEDE;
 } */

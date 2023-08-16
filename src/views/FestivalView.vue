@@ -213,7 +213,7 @@ watch(nowSeason, () => nowFes.value = [])
   <div class="wrap p-3">
     <Title>節日介紹</Title>
     <div class="container">
-      <div class="calendar mt-3">
+      <div class="calendar my-3">
         <div class="title d-flex">
           <button id="prev" @click="changeSeason('prev')">❮</button>
           <h4 class="d-flex">{{ nowSeason }}</h4>
@@ -259,12 +259,12 @@ watch(nowSeason, () => nowFes.value = [])
 
 <style lang="scss" scoped>
 .wrap {
-  flex-direction: column;
 
   .calendar {
     width: 100%;
     max-width: 760px;
     height: 65vh;
+    min-height: 580px;
     margin: 0 auto;
     .title {
       width: 100%;
@@ -294,7 +294,7 @@ watch(nowSeason, () => nowFes.value = [])
         height: 10%;
         justify-content: space-around;
         .week {
-          width: 12%;
+          width: 13%;
           color: #fff;
           background-color: #d6921c;
           border-radius: 10px;
@@ -314,12 +314,12 @@ watch(nowSeason, () => nowFes.value = [])
         height: 65%;
         flex-wrap: wrap;
         justify-content: space-around;
+        align-items: center;
         .grid {
-          width: 12%;
+          width: 13%;
           height: 12%;
           background-color: #E0CA68;
           border-radius: 10px;
-          margin: 5px;
           &:nth-child(7n+1){
             background-color: #F1A4A4;
           }
@@ -331,8 +331,16 @@ watch(nowSeason, () => nowFes.value = [])
             height: 100%;
             align-items: center;
             padding: 10px;
+            position: relative;
             .date{
                 color: #7F592F;
+                &::after{
+                  content: '☼';
+                  font-size: 30px;
+                  position: absolute;
+                  
+                  
+                }
             }
             img{
               width: 40%;

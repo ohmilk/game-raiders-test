@@ -79,11 +79,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 710px) {
-  .about{
-    margin-top: 0;
-  }
-}
+
 
 @keyframes slide-left {
   from {
