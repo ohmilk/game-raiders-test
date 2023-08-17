@@ -31,8 +31,8 @@ body {
             height: 30px;
             background-color: rgb(255, 255, 255, .1);
             position: fixed;
-            bottom: 40px;
-            right: 20px;
+            bottom: 6%;
+            right: 1%;
 
             &:hover{
                 animation: top 1s infinite;

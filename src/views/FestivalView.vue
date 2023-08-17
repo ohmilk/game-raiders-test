@@ -8,6 +8,7 @@ const nowFes = ref([])
 let lastgrids = ref(NaN);
 let lastgridsArray = ref([]);
 let filterSeason = ref([])
+const activeGrid = ref(null);
 const weeks = ref(["日", "一", "二", "三", "四", "五", "六"]);
 const seasons = ref([
   {
@@ -205,8 +206,17 @@ const filterFestival = (num) => {
 
 const showFestival = (num) => {
   nowFes.value = filterNowfestival.value.filter(f => f.date === num);
+  if (activeGrid.value === num) {
+    activeGrid.value = null;
+  } else {
+    activeGrid.value = num;
+  }
 }
-watch(nowSeason, () => nowFes.value = [])
+
+watch(nowSeason, () => {
+  nowFes.value = [];
+  activeGrid.value = null;
+})
 </script>
 
 <template>
@@ -232,9 +242,10 @@ watch(nowSeason, () => nowFes.value = [])
               :key="nowStarDay"
             ></div>
             <div class="grid" v-for="num of 30" :key="num">
-              <button class="grid-btn d-flex" @click="showFestival(num)">
-                <span class="date">{{ num }}</span>
-                <img v-if="filterFestival(num).length > 0" src="@/assets/img/festival/balloon.png"/>
+              <button class="grid-btn d-flex" :class="{ active: num === activeGrid }" 
+              @click="showFestival(num)">
+                <span class="date d-flex">{{ num }}</span>
+                <div class="img" v-if="filterFestival(num).length > 0"> </div>
               </button>
             </div>
             <div
@@ -262,7 +273,7 @@ watch(nowSeason, () => nowFes.value = [])
 
   .calendar {
     width: 100%;
-    max-width: 760px;
+    max-width: 550px;
     height: 65vh;
     min-height: 580px;
     margin: 0 auto;
@@ -330,22 +341,57 @@ watch(nowSeason, () => nowFes.value = [])
             width: 100%;
             height: 100%;
             align-items: center;
-            padding: 10px;
+            border-radius: 10px;
             position: relative;
+            
             .date{
-                color: #7F592F;
-                &::after{
-                  content: '☼';
-                  font-size: 30px;
-                  position: absolute;
-                  
-                  
-                }
+              width: 50%;
+              color: #7F592F;
+              justify-content: center;
+              align-items: center;
             }
-            img{
+            .img{
               width: 40%;
-              margin-left: auto;
+              height: 100%;
+              background-image: url(@/assets/img/festival/balloon.png);
+              background-size: cover;
             }
+            @media screen and (max-width: 500px) {
+              .date{
+                width: 100%;
+                height: 100%;
+              }
+              .img{
+                width: 100%;
+                background-image: url(@/assets/img/festival/circle.png);
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+            }
+          }
+          .active {
+            background-color: rgb(212, 229, 159)
+          }
+          .active::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: #b1ab4c 3px solid;
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+          }
+          .grid-btn:hover::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: #9e9734 3px solid;
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
           }
         }
       }
