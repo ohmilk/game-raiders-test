@@ -1,8 +1,8 @@
 <template>
     <div class="wrap">
-      <div class="container-fluid home d-flex">
+      <div class="container home d-flex">
         <div class="back-img">
-        <span class="text">歡迎來到牧場物語</span>
+          <div class="logo d-shadow"></div>
         </div>
       </div>
     </div>
@@ -16,30 +16,34 @@
       width: 100%;
       height: 38vw;
       position: relative;
-      background-image: url(@/assets/img/banner/banner2.jpg);
+      background-image: url(@/assets/img/backgroundImg/homeBackImg.jpg);
       background-repeat: no-repeat;
       background-size: cover;
+      .logo{
+        width: 50%;
+        height: 50%;
+        opacity: 1;
+        background-image: url(@/assets/img/banner/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        animation: overTurn 5s;
+      }
     }
-    .text{
-      width: 8em;
-      font-size: 30px;
-      font-weight: 600;
-      white-space: nowrap;
-      position: absolute;
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      border-right: .05em solid;
-      animation: typing 3.5s steps(8, end) infinite, blink-caret .75s step-end infinite;
-      overflow: hidden;
+    @keyframes logoEmerge {
+      0%{opacity: 0;}
+      100%{opacity: 1;}
     }
-  }
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 8em; }
-  }
-  // 游標
-  @keyframes blink-caret {
-    50% { border-color: transparent; }
+    @keyframes overTurn {
+      50%{
+        transform: rotateY(180deg);
+      }
+      100%{
+        transform: rotateY(0deg);
+      }
+    }
   }
 </style>
