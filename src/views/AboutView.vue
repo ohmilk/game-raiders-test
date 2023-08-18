@@ -1,29 +1,27 @@
-<script>
+<script setup>
 import Title from "@/components/Title.vue";
-export default {
-  components: {
-    Title,
-  },
-};
+import { ref } from "vue";
 </script>
 <template>
-  <div class="wrap p-3 mb-3 about">
+  <div class="wrap p-3 mb-3">
     <Title />
-    <div class="info-wrap d-flex flex-column mt-1">
-      <div class="card card-left p-3 d-shadow">
-        <span class="card-title c-blue"><strong>故事起源</strong></span>
-        <div class="card-info c-blue">
-          兒時的暑假，<br />主角曾造訪老爺爺的牧場，<br />在大自然中生活、和動物們相處等等，<br />度過了一段在都市體驗不到的生活。<br />
+    <div class="container">
+      <div class="about d-flex">
+        <h4 class="about-title top-title c-brown d-shadow"><strong>故事起源</strong></h4>
+        <div class="info top-info c-brown d-shadow">
+          <p class="d-flex">
+            兒時的暑假，<br />主角曾造訪老爺爺的牧場，<br />在大自然中生活、和動物們相處等等，<br />度過了一段在都市體驗不到的生活。<br />
           十幾年後，主角再次來到了「礦石鎮」，<br />然而等待他的卻是因為老爺爺的離世，<br />而變得淒涼林亂的荒廢牧場。<br />
           於是主角下定決心，<br />要將這裡恢復成當時那座溫暖的牧場。
+          </p>
         </div>
-      </div>
-      <div class="card card-right p-3 d-shadow">
-        <span class="card-title c-blue"><strong>遊戲介紹</strong></span>
-        <div class="card-info c-blue">
-          這是一款模擬經營＋戀愛養成的遊戲，<br />透過飼養牲畜、種植、釣魚、挖礦等動作來獲取物品，<br />並販售加以賺取遊戲幣，<br />
-          利用送禮及觸發事件等機制與心儀對象培養好感度，<br />還可以和礦石鎮上居民談戀愛、結婚。<br />
-          此外，玩家可以在礦場挖礦、泡溫泉，<br />請小矮人們幫忙做農活，與居民互動，體驗牧場生活等。
+        <h4 class="about-title next-title c-brown d-shadow"><strong>遊戲介紹</strong></h4>
+        <div class="info next-info c-brown d-shadow">
+          <p class="d-flex">
+            這是一款模擬經營＋戀愛養成的遊戲，<br />玩家可以在礦場挖礦、泡溫泉，<br />請小矮人們幫忙做農活，<br />與居民互動，體驗牧場生活等。<br />
+            此外，<br />透過飼養牲畜、種植、釣魚、挖礦等動作來獲取物品，<br />並販售加以賺取遊戲幣，<br />
+            利用送禮及觸發事件等機制與心儀對象培養好感度，<br />還可以和礦石鎮上居民談戀愛、結婚。
+          </p>
         </div>
       </div>
     </div>
@@ -32,79 +30,88 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  min-height: calc(100vh - 180px);
-  position: relative;
-  background-image: url(../assets/img/backgroundImg/aboutbki.png);
-  background-size: contain;
+  max-width: 500px;
+  min-height: 620px;
+  height: 100%;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../assets/img/backgroundImg/aboutBackImg.jpg);
+  background-size: cover;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6);
-  .info-wrap {
-    width: 100%;
-    height: 100%;
-    position: relative;
 
-    .card {
-      width: 40%;
-      border-radius: 20px;
-      position: absolute;
-      background-color: rgba(255, 232, 219, 0.8);
+  .about-title{
+    opacity: 0;
+    width: 4em;
+    margin-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: solid transparent;
+  }
+  .info{
+    opacity: 0;
+    max-width: 410px;
+    width: 90%;
+    height: 250px;
+    border-radius: 10px;
+    background-color: rgba(255, 228, 196, 0.873);
+    overflow: hidden;
+    p{
+      padding: 5px 0;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  @media screen and (max-width: 530px) {
+    .info{
+      width: 100%;
+    }
+  }
 
-      @media screen and (max-width: 592px) {
-        .card-info{
-          text-align: left;
-        }
-      }
-    }
+  .top-title{
+    animation: typing 2s steps(4) , cursor .6s infinite, showOpacity .1s forwards;
+  }
+  .top-info{
+    animation: emerge 5s 2s, showOpacity .1s 2s forwards;
+  }
 
-    .card-left {
-      left: 5%;
-      top: 5%;
-      animation-name: slide-left;
-      animation-duration: 3s;
-    }
+  .next-title{
+    animation: typing 2s 7s steps(4), cursor .6s infinite, showOpacity .1s 7s forwards;
+  }
 
-    .card-right {
-      right: 5%;
-      bottom: 5%;
-      animation-name: slide-right;
-      animation-duration: 3s;
-    }
-    @media screen and (max-width: 992px) {
-      .card {
-        width: 100%;
-        margin: 10px 0;
-        position: static;
-        animation: info-opacity 3s;
-      }
-    }
+  .next-info{
+    animation: emerge 5s 9s, showOpacity .1s 9s forwards;
   }
 }
-
-
-
-@keyframes slide-left {
-  from {
-    left: -100px;
-    opacity: 0;
+@keyframes typing {
+  0%{
+    width: 0;
+    opacity: 1;
   }
-  to {
-    left: 5%;
-  }
-}
-@keyframes slide-right {
-  from {
-    right: -100px;
-    opacity: 0;
-  }
-  to {
-    right: 5%;
-  }
-}
-@keyframes info-opacity {
-  from {
-    opacity: 0;
-  }
-  to {
+  100%{
+    width: 4em;
     opacity: 1;
   }
 }
+@keyframes cursor {
+  50%{border-color: black;}
+}
+@keyframes emerge {
+  0%{
+    height: 0;
+    opacity: 1;
+    }
+  100%{
+    height: 250px;
+    opacity: 1;
+  }
+}
+@keyframes showOpacity {
+    to {
+      opacity: 1;
+    }
+  }
 </style>

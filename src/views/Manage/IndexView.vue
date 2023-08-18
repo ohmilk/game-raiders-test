@@ -40,6 +40,6 @@ export default {
 
 <style>
 .carousel{
-  width: 50vw;
+  width: 100%;
 }
 </style>

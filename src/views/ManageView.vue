@@ -46,7 +46,8 @@ import Title from "@/components/Title.vue";
     }
   }
   section{
-    width: 80%;
+    max-width: 700px;
+    width: 100%;
     margin: 0 auto;
     justify-content: center;
   }
