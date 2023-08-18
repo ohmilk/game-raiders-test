@@ -100,8 +100,8 @@ const curseTools = ref([
           </thead>
           <tbody>
             <tr v-for="(item,idex) of strengths" :key="item">
-              <td>{{ idex + 1 }}</td>
-              <td>{{ item }}</td>
+              <td data-label="掉落層數">{{ idex + 1 }}</td>
+              <td data-label="體力減少">{{ item }}</td>
             </tr>
           </tbody>
         </table>
@@ -123,9 +123,13 @@ const curseTools = ref([
           </thead>
           <tbody>
             <tr v-for="item of curseTools" :key="item">
-              <td>{{ item.name }}</td>
-              <td>{{ item.floor }}</td>
-              <td>{{ item.relieve }}</td>
+              <td data-label="詛咒工具">{{ item.name }}</td>
+              <td data-label="湖之採礦場樓層">{{ item.floor }}</td>
+              <td data-label="解咒變祝福工具">
+                <p>
+                  {{ item.relieve }}
+                </p>
+                </td>
             </tr>
           </tbody>
         </table>
@@ -163,9 +167,40 @@ const curseTools = ref([
     background-size: contain;
 
     .table{
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
     }
+    @media screen and (max-width: 600px) {
+      table{
+        border: none;
+        thead{
+          display: none;
+        }
+        tr{
+          display: block;
+          margin-bottom: 10px;
+          text-align: right;
+          position: relative;
+          td{
+            display: block;
+            border: 1px solid #ddd;
+            p{
+              width: 50%;
+              margin-left: auto;
+            }
+          }
+        }
+      }
+      table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 5%;
+      }
+
+    }
+    img{
+        width: 100%;
+      }
   }
 }
 .nav-link{

@@ -30,7 +30,7 @@ const clickAnimalHandler = (animal, index) => {
       所以放牧需考慮產品的獲得。
     </p>
     <h4 class="c-brown d-shadow">動物們</h4>
-    <div class="animal-cards d-flex p-3 d-shadow">
+    <div class="animal-cards d-flex d-shadow">
       <button
         type="button"
         class="card d-flex"
@@ -81,6 +81,7 @@ const clickAnimalHandler = (animal, index) => {
 .animal-cards {
   width: 100%;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .card {
   width: 15%;

@@ -1,5 +1,173 @@
-<script>
-export default {};
+<script setup>
+import { ref } from "vue";
+
+const spring = ref([
+  {
+    name: "蕪菁",
+    place: "雜貨店",
+    money: "120G",
+    grow: "4天",
+    remark: "X"
+  },
+  {
+    name: "馬鈴薯",
+    place: "雜貨店",
+    money: "150G",
+    grow: "7天",
+    remark: "X"
+  },
+  {
+    name: "小黃瓜",
+    place: "雜貨店",
+    money: "200G",
+    grow: "9天，之後每5天可收獲一次",
+    remark: "X"
+  },
+  {
+    name: "草莓",
+    place: "雜貨店",
+    money: "150G",
+    grow: "9天，之後每3天可收獲一次",
+    remark: "蕪菁、馬鈴薯、小黃瓜各出貨100個後出現"
+  },
+  {
+    name: "草莓",
+    place: "雜貨店",
+    money: "150G",
+    grow: "9天，之後每3天可收獲一次",
+    remark: "蕪菁、馬鈴薯、小黃瓜各出貨100個後出現"
+  },
+  {
+    name: "高麗菜",
+    place: "霍安的店",
+    money: "500G",
+    grow: "14天",
+    remark: "X"
+  },
+  {
+    name: "月落草",
+    place: "霍安的店",
+    money: "500G",
+    grow: "6天",
+    remark: "X"
+  },
+  {
+    name: "三色花",
+    place: "霍安的店",
+    money: "400G",
+    grow: "12天",
+    remark: "X"
+  },
+]);
+const summer = ref([
+  {
+    name: "番茄",
+    place: "雜貨店",
+    money: "200G",
+    grow: "9天，之後每3天可收獲一次",
+    remark: "X"
+  },
+  {
+    name: "玉米",
+    place: "雜貨店",
+    money: "300G",
+    grow: "14天，之後每3天可收獲一次",
+    remark: "X"
+  },
+  {
+    name: "洋蔥",
+    place: "雜貨店",
+    money: "150G",
+    grow: "7天",
+    remark: "X"
+  },
+  {
+    name: "南瓜",
+    place: "雜貨店",
+    money: "500G",
+    grow: "14天",
+    remark: "番茄、玉米、洋蔥各出貨100個後出現"
+  },
+  {
+    name: "鳳梨",
+    place: "霍安的店",
+    money: "1000G",
+    grow: "20天，之後每5天可收獲一次",
+    remark: "X"
+  },
+  {
+    name: "粉色貓薄荷",
+    place: "霍安的店",
+    money: "300G",
+    grow: "6天",
+    remark: "X"
+  },
+]);
+const autumn = ref([
+  {
+    name: "茄子",
+    place: "雜貨店",
+    money: "120G",
+    grow: "9天，之後每3天可收獲一次",
+    remark: "X"
+  },
+  {
+    name: "胡蘿蔔",
+    place: "雜貨店",
+    money: "300G",
+    grow: "7天",
+    remark: "X"
+  },
+  {
+    name: "番薯",
+    place: "雜貨店",
+    money: "300G",
+    grow: "6天，之後每3天可收獲一次",
+    remark: "X"
+  },
+  {
+    name: "菠菜",
+    place: "雜貨店",
+    money: "200G",
+    grow: "5天",
+    remark: "茄子、胡蘿蔔、番薯各出貨100個後出現"
+  },
+  {
+    name: "青椒",
+    place: "霍安的店",
+    money: "150G",
+    grow: "7天，之後每2天可收獲一次",
+    remark: "X"
+  },
+  {
+    name: "紅豆",
+    place: "雜貨店",
+    money: "300G",
+    grow: "10天，之後每4天可收獲一次",
+    remark: "X"
+  },
+  {
+    name: "辣椒",
+    place: "雜貨店",
+    money: "300G",
+    grow: "12天，之後每5天可收獲一次",
+    remark: "X"
+  },
+  {
+    name: "奇幻朱草",
+    place: "霍安的店",
+    money: "600G",
+    grow: "10天",
+    remark: "X"
+  },
+  {
+    name: "橙色維納斯",
+    place: "雜貨店",
+    money: "1000G",
+    grow: "10天",
+    remark: "觸發橙色維納斯劇情後過幾天可買"
+  },
+]);
 </script>
 
 <template>
@@ -29,53 +197,23 @@ export default {};
             <thead>
               <tr>
                 <th scope="col">種子</th>
-                <th scope="col">販售地方</th>
-                <th scope="col">價錢</th>
-                <th scope="col">成長期</th>
+                <th>販售地方</th>
+                <th>價錢</th>
+                <th>成長期</th>
+                <th>備註</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">蕪菁</th>
-                <td>雜貨店</td>
-                <td>120G</td>
-                <td>4天</td>
-              </tr>
-              <tr>
-                <th scope="row">馬鈴薯</th>
-                <td>雜貨店</td>
-                <td>150G</td>
-                <td>7天</td>
-              </tr>
-              <tr>
-                <th scope="row">小黃瓜</th>
-                <td>雜貨店</td>
-                <td>200G</td>
-                <td>9天，之後每5天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">草莓</th>
-                <td>雜貨店<br />（蕪菁、馬鈴薯、小黃瓜各出貨100個後出現）</td>
-                <td>150G</td>
-                <td>9天，之後每3天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">高麗菜</th>
-                <td>霍安的店</td>
-                <td>500G</td>
-                <td>14天</td>
-              </tr>
-              <tr>
-                <th scope="row">月落草</th>
-                <td>霍安的店</td>
-                <td>500G</td>
-                <td>6天</td>
-              </tr>
-              <tr>
-                <th scope="row">三色花</th>
-                <td>霍安的店</td>
-                <td>400G</td>
-                <td>12天</td>
+              <tr v-for="seed of spring" :key="seed.name">
+                <td data-label="種子">{{seed.name}}</td>
+                <td data-label="販售地方">{{seed.place}}</td>
+                <td data-label="價錢">{{seed.money}}</td>
+                <td data-label="成長期">{{seed.grow}}</td>
+                <td data-label="備註">
+                  <p>
+                    {{ seed.remark }}
+                    </p>
+                  </td>
               </tr>
             </tbody>
           </table>
@@ -107,47 +245,23 @@ export default {};
             <thead>
               <tr>
                 <th scope="col">種子</th>
-                <th scope="col">販售地方</th>
-                <th scope="col">價錢</th>
-                <th scope="col">成長期</th>
+                <th>販售地方</th>
+                <th>價錢</th>
+                <th>成長期</th>
+                <th>備註</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">番茄</th>
-                <td>雜貨店</td>
-                <td>200G</td>
-                <td>9天，之後每3天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">玉米</th>
-                <td>雜貨店</td>
-                <td>300G</td>
-                <td>14天，之後每3天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">洋蔥</th>
-                <td>雜貨店</td>
-                <td>150G</td>
-                <td>7天</td>
-              </tr>
-              <tr>
-                <th scope="row">南瓜</th>
-                <td>雜貨店<br />（番茄、玉米、洋蔥各出貨100個後出現）</td>
-                <td>500G</td>
-                <td>14天</td>
-              </tr>
-              <tr>
-                <th scope="row">鳳梨</th>
-                <td>霍安的店</td>
-                <td>1000G</td>
-                <td>20天，之後每5天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">粉色貓薄荷</th>
-                <td>霍安的店</td>
-                <td>300G</td>
-                <td>6天</td>
+              <tr v-for="seed of summer" :key="seed.name">
+                <td data-label="種子">{{ seed.name }}</td>
+                <td data-label="販售地方">{{ seed.place }}</td>
+                <td data-label="價錢">{{ seed.money }}</td>
+                <td data-label="成長期">{{ seed.grow }}</td>
+                <td data-label="備註">
+                  <p>
+                    {{ seed.remark }}
+                    </p>
+                  </td>
               </tr>
             </tbody>
           </table>
@@ -179,65 +293,23 @@ export default {};
             <thead>
               <tr>
                 <th scope="col">種子</th>
-                <th scope="col">販售地方</th>
-                <th scope="col">價錢</th>
-                <th scope="col">成長期</th>
+                <th>販售地方</th>
+                <th>價錢</th>
+                <th>成長期</th>
+                <th>備註</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">茄子</th>
-                <td>雜貨店</td>
-                <td>120G</td>
-                <td>9天，之後每3天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">胡蘿蔔</th>
-                <td>雜貨店</td>
-                <td>300G</td>
-                <td>7天</td>
-              </tr>
-              <tr>
-                <th scope="row">番薯</th>
-                <td>雜貨店</td>
-                <td>300G</td>
-                <td>6天，之後每3天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">菠菜</th>
-                <td>雜貨店<br />（茄子、胡蘿蔔、番薯各出貨100個後出現）</td>
-                <td>200G</td>
-                <td>5天</td>
-              </tr>
-              <tr>
-                <th scope="row">青椒</th>
-                <td>霍安的店</td>
-                <td>150G</td>
-                <td>7天，之後每2天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">紅豆</th>
-                <td>雜貨店</td>
-                <td>300G</td>
-                <td>10天，之後每4天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">辣椒</th>
-                <td>雜貨店</td>
-                <td>300G</td>
-                <td>12天，之後每5天可收獲一次</td>
-              </tr>
-              <tr>
-                <th scope="row">奇幻朱草</th>
-                <td>霍安的店</td>
-                <td>600G</td>
-                <td>10天</td>
-              </tr>
-              <tr>
-                <th scope="row">橙色維納斯</th>
-                <td>雜貨店<br />（觸發橙色維納斯劇情後過幾天可買）</td>
-                <td>1000G</td>
-                <td>10天</td>
+              <tr v-for="seed of autumn" :key="seed.name">
+                <td data-label="種子">{{ seed.name }}</td>
+                <td data-label="販售地方">{{ seed.place }}</td>
+                <td data-label="價錢">{{ seed.money }}</td>
+                <td data-label="成長期">{{ seed.grow }}</td>
+                <td data-label="備註">
+                  <p>
+                    {{ seed.remark }}
+                    </p>
+                  </td>
               </tr>
             </tbody>
           </table>
@@ -264,6 +336,33 @@ export default {};
   }
   tbody tr:nth-child(2n){
     background-color: rgb(219, 233, 246);
+  }
+  @media screen and (max-width: 600px) {
+      table{
+        border: none;
+        thead{
+          display: none;
+        }
+        tr{
+          display: block;
+          margin-bottom: 10px;
+          text-align: right;
+          position: relative;
+          td{
+            display: block;
+            border: 1px solid #ddd;
+            p{
+              width: 50%;
+              margin-left: auto;
+            }
+          }
+        }
+      }
+      table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 5%;
+      }
   }
 }
 </style>

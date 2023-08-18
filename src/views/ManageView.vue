@@ -6,10 +6,10 @@ import Title from "@/components/Title.vue";
   <div class="wrap manage p-3">
     <Title>經營牧場</Title>
     <nav class="d-flex">
-      <router-link to="/manage/animal" class="link d-flex fs-5 fw-bold px-3 py-2">畜牧</router-link>
-      <router-link to="/manage/plant" class="link d-flex fs-5 fw-bold px-3 py-2">種植</router-link>
-      <router-link to="/manage/mining" class="link d-flex fs-5 fw-bold px-3 py-2">挖礦</router-link>
-      <router-link to="/manage/angling" class="link d-flex fs-5 fw-bold px-3 py-2">釣魚</router-link>
+      <router-link to="/manage/animal" class="link d-flex fw-bold px-3 py-2">畜牧</router-link>
+      <router-link to="/manage/plant" class="link d-flex fw-bold px-3 py-2">種植</router-link>
+      <router-link to="/manage/mining" class="link d-flex fw-bold px-3 py-2">挖礦</router-link>
+      <router-link to="/manage/angling" class="link d-flex fw-bold px-3 py-2">釣魚</router-link>
     </nav>
     <section class="d-flex">
       <router-view/>
@@ -28,8 +28,9 @@ import Title from "@/components/Title.vue";
     .link{
       width: 20%;
       color: rgb(144, 97, 36);
+      font-size: 22px;
       align-content: center;
-      justify-content: center;
+      justify-content: space-around;
       flex-wrap: wrap;
       border-radius: 10px;
       border: 1px solid #996f6f;
@@ -43,6 +44,16 @@ import Title from "@/components/Title.vue";
       &:hover{
         transform: translateY(-6px);
       }
+    }
+    @media screen and (max-width: 420px) {
+      .link{
+      font-size: 16px;
+      }
+    }
+  }
+  @media screen and (max-width: 710px) {
+    nav{
+      width: 100%;
     }
   }
   section{

@@ -40,6 +40,7 @@ import { ref } from "vue";
   align-items: center;
   background-image: url(../assets/img/backgroundImg/aboutBackImg.jpg);
   background-size: cover;
+  background-position: right bottom;
   box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.6);
 
   .about-title{
@@ -72,18 +73,18 @@ import { ref } from "vue";
   }
 
   .top-title{
-    animation: typing 2s steps(4) , cursor .6s infinite, showOpacity .1s forwards;
+    animation: typing 1s steps(4) , cursor .6s infinite, showOpacity .1s forwards;
   }
   .top-info{
-    animation: emerge 5s 2s, showOpacity .1s 2s forwards;
+    animation: emerge 5s 1s, showOpacity .1s 2s forwards;
   }
 
   .next-title{
-    animation: typing 2s 7s steps(4), cursor .6s infinite, showOpacity .1s 7s forwards;
+    animation: typing 1s 6s steps(4), cursor .6s infinite, showOpacity .1s 7s forwards;
   }
 
   .next-info{
-    animation: emerge 5s 9s, showOpacity .1s 9s forwards;
+    animation: emerge 5s 7s, showOpacity .1s 9s forwards;
   }
 }
 @keyframes typing {
