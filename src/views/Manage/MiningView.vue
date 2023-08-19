@@ -117,7 +117,7 @@ const curseTools = ref([
           <thead>
             <tr>
               <td class="fw-bold">詛咒工具</td>
-              <td class="fw-bold">湖之採礦場樓層</td>
+              <td class="fw-bold" width="30%">湖之採礦場樓層</td>
               <td class="fw-bold">解咒變祝福工具</td>
             </tr>
           </thead>
@@ -196,7 +196,11 @@ const curseTools = ref([
         position: absolute;
         left: 5%;
       }
-
+    }
+    @media screen and (max-width: 300px) {
+      table td::before{
+        font-size: 12px;
+      }
     }
     img{
         width: 100%;

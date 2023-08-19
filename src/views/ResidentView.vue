@@ -277,23 +277,29 @@ const filterRes = computed(() => {
 
 <template>
   <div class="wrap resident p-3">
-    <Title>礦石鎮居民(點擊圖片房屋)</Title>
-    <div class="map-wrap mt-3">
+    <Title>礦石鎮居民</Title>
+    <div class="resident-content mt-3">
+      <div class="caption d-flex">
+      <h5 class="c-brown">點擊圖片房屋認識居民</h5>
+    </div>
+      <div class="map-wrap mt-3">
             <div class="map">
               <button v-for="res of resPlaces" class="place" :class="res.eName" :title="res.name"
               :key="res.eName" @click="clickPlace(res.name)"
               data-bs-toggle="modal" data-bs-target="#Modal"></button>
             </div>
         </div>
-  </div>
+      </div>
+    </div>
+    
   <Modal>
     <template #header>{{ place }}</template>
-    <div class="res-cotent" v-if="filterRes.length > 0">
-      <div v-for="info of filterRes" :key="info.name" class="card p-3">
-        <div class="card-img">
+    <div class="res-cotent row" v-if="filterRes.length > 0">
+      <div v-for="info of filterRes" :key="info.name" class="card col-12 col-lg-4">
+        <div class="card-img d-flex">
           <img class="d-shadow" :src="require(`../assets/img/resident/resident-img${info.number}.png`)" alt="">
         </div>
-        <div class="card-info mt-3 p-3">
+        <div class="card-info mt-3">
           <div class="card-title d-shadow">
             <span>{{ info.name }}</span>
           </div>
@@ -309,12 +315,26 @@ const filterRes = computed(() => {
 
 <style lang="scss" scoped>
 .resident{
-    height: 100%;
-    flex-wrap: wrap;
+    .resident-content{
+      width: 100%;
+    }
+    .caption{
+      width: 100%;
+      height: 50px;
+      align-items: center;
+      h5{
+        margin: 0 auto;
+        width: 10em;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: solid transparent;
+        animation: typing 2s steps(10), cursor .6s infinite;
+      }
+    }
     .map-wrap{
-      width: 80%;
+      width: 100%;
       max-width: 890px;
-      height: 44.6vw;
+      height: 53.5vw;
       max-height: 500px;
       margin: 0 auto;
       position: relative;
@@ -398,20 +418,22 @@ const filterRes = computed(() => {
 
   .res-cotent{
     width: 100%;
-    max-height: 70vh;
     display: flex;
     justify-content: space-around;
+    margin: 0;
 
     .card{
-      width: 30%;
       border: none;
       background-color: rgb(253, 253, 253, 0.1);
+      padding: 0;
 
       .card-img{
         width: 100%;
         height: 60%;
+        align-items: center;
         img{
-          height: 90%;
+          max-height: 90%;
+          max-width: 90%;
         }
       }
 
@@ -421,6 +443,7 @@ const filterRes = computed(() => {
         position: relative;
         display: flex;
         flex-direction: column;
+        justify-content: center;
 
         .card-title{
           width: 50%;
@@ -437,5 +460,28 @@ const filterRes = computed(() => {
       }
     }
   }
-        
+  @media screen and (max-width: 992px) {
+    .res-cotent{
+      .card{
+        flex-direction: row;
+        height: 25vh;
+        .card-img{
+          width: 30%;
+          height: 100%;
+          align-items: normal;
+          justify-content: center;
+        }
+        .card-info{
+          width: 70%;
+        }
+      }
+    }
+  }
+@keyframes typing {
+  0%{width: 0;}
+  100%{width: 10em;}
+}
+@keyframes cursor {
+  50%{border-color: black;}
+}
 </style>

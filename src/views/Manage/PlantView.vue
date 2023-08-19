@@ -208,7 +208,11 @@ const autumn = ref([
                 <td data-label="種子">{{seed.name}}</td>
                 <td data-label="販售地方">{{seed.place}}</td>
                 <td data-label="價錢">{{seed.money}}</td>
-                <td data-label="成長期">{{seed.grow}}</td>
+                <td data-label="成長期">
+                  <p>
+                    {{ seed.grow }}
+                  </p>
+                </td>
                 <td data-label="備註">
                   <p>
                     {{ seed.remark }}
@@ -256,7 +260,11 @@ const autumn = ref([
                 <td data-label="種子">{{ seed.name }}</td>
                 <td data-label="販售地方">{{ seed.place }}</td>
                 <td data-label="價錢">{{ seed.money }}</td>
-                <td data-label="成長期">{{ seed.grow }}</td>
+                <td data-label="成長期">
+                  <p>
+                    {{ seed.grow }}
+                  </p>
+                </td>
                 <td data-label="備註">
                   <p>
                     {{ seed.remark }}
@@ -304,7 +312,11 @@ const autumn = ref([
                 <td data-label="種子">{{ seed.name }}</td>
                 <td data-label="販售地方">{{ seed.place }}</td>
                 <td data-label="價錢">{{ seed.money }}</td>
-                <td data-label="成長期">{{ seed.grow }}</td>
+                <td data-label="成長期">
+                  <p>
+                    {{ seed.grow }}
+                  </p>
+                </td>
                 <td data-label="備註">
                   <p>
                     {{ seed.remark }}
@@ -330,9 +342,12 @@ const autumn = ref([
     text-align: center;
     filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.6));
   }
-  thead tr{
+  thead th{
   background-color: rgb(59, 103, 191);
   color: #fff;
+  &:nth-child(-n+3){
+    width: 15%;
+  }
   }
   tbody tr:nth-child(2n){
     background-color: rgb(219, 233, 246);

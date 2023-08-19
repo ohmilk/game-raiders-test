@@ -27,6 +27,7 @@ export default {
 <style lang="scss" scoped>
 .modal-dialog{
     max-width: 80%;
+    margin: 10px auto;
 }
 .modal-content{
     background-image: url(../assets/img/backgroundImg/resbck.png);
@@ -37,6 +38,11 @@ export default {
             width: 40%;
             border-radius: 20px;
             padding: 10px;
+        }
+        @media screen and (max-width: 992px) {
+          .modal-title{
+            width: 100%;
+          }
         }
     }
 }

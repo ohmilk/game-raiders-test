@@ -91,13 +91,16 @@ const filterInfo = computed(() => {
 <template>
   <div class="wrap chara mb-5 p-3 d-shadow">
     <Title>戀愛對象</Title>
-    <div class="chara-cards d-flex p-3 d-shadow">
-        <button type="button" class="card d-flex" v-for="(item,index) of charas"
-         :key="item"  data-bs-toggle="modal" data-bs-target="#Modal"
+    <div class="chara-cards row p-3 d-shadow">
+        <div class="card-content col-6 col-sm-4 col-lg-2" 
+            v-for="(item,index) of charas" :key="item">
+            <button type="button" class="card d-flex"
+           data-bs-toggle="modal" data-bs-target="#Modal"
          @click="clickChara(item)">
             <img class="img" :src="require(`../assets/img/chara/chara-img${index + 1}.png`)" :alt="item">
             <span class="card-name">{{ item }}</span>
         </button>
+        </div>
     </div>
   </div>
   <Modal>
@@ -133,40 +136,79 @@ const filterInfo = computed(() => {
     background-image: url(../assets/img/backgroundImg/charabki.jpg);
     background-size: contain;
     flex-wrap: wrap;
-}
-.chara-cards{
-    width: 100%;
-    justify-content: space-around;
-}
-        .card{
-            width: 15%;
-            max-height: 80%;
-            background-color: rgba(252, 237, 237, 0.6);
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .card-name{
+    .chara-cards{
+        justify-content: space-around;
+        .card-content{
+            height: auto;
             padding: 5px;
-            opacity: 0;
+            .card{
+                height: 100%;
+                width: 100%;
+                background-color: rgba(252, 237, 237, 0.6);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .card-name{
+                    padding: 5px;
+                    opacity: 0;
+                }
+                .img{
+                    max-width: 70%;
+                    max-height: 80%;
+                    filter: saturate(0) brightness(0) contrast(0);
+                }
+                .img:hover{
+                    filter: brightness(1) contrast(1) saturate(1);
+                }
+                .img:hover+span{
+                    opacity: 1;
+                }
+            }
         }
-        .img{
-            max-width: 70%;
-            max-height: 80%;
-            filter: saturate(0) brightness(0) contrast(0);
-        }
-        .img:hover{
-            filter: brightness(1) contrast(1) saturate(1);
-        }
-        .img:hover+span{
-            opacity: 1;
-        }
+    }
+}
 .chara-info-card{
     justify-content: center;
     .chara-info{
         .info{
             display: flex;
+            strong, p{
+                text-align: left;
+                margin: 0;
+            }
         }
     }
+    @media screen and (max-width: 1100px) {
+        .info{
+            border-bottom: 1px solid rgb(146, 142, 142);
+            width: 100%;
+            padding: 5px;
+            strong{
+                width: 15%;
+                display: flex;
+                align-items: center;
+            }
+            p{
+                width: 85%;
+            }
+        }
+    }
+    @media screen and (max-width: 720px) {
+        .info{
+            strong{
+                width: 30%;
+            }
+            p{
+                width: 70%;
+            }
+        }
+    
+    }
 }
+@media screen and (max-width: 1100px) {
+    .chara-info-card{
+        flex-direction: column;
+    }
+}
+
 </style>

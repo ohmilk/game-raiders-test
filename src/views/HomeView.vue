@@ -15,6 +15,7 @@
     .back-img{
       width: 100%;
       height: 38vw;
+      border-radius: 10px;
       position: relative;
       background-image: url(@/assets/img/backgroundImg/homeBackImg.jpg);
       background-repeat: no-repeat;

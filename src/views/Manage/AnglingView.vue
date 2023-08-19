@@ -132,8 +132,8 @@ const notFishs = ref([
         </thead>
         <tbody>
           <tr v-for="(leave, index) of chargeLevels" :key="leave">
-            <th>{{ leave }}</th>
-            <td>{{ index + 1 }}</td>
+            <td data-label="工具等級">{{ leave }}</td>
+            <td data-label="蓄力上限">{{ index + 1 }}</td>
           </tr>
         </tbody>
       </table>
@@ -166,11 +166,15 @@ const notFishs = ref([
         </thead>
         <tbody>
           <tr v-for="item of notFishs" :key="item.name">
-            <th>{{ item.name }}</th>
-            <td>{{ item.leave }}</td>
-            <td>{{ item.time }}</td>
-            <td>{{ item.place }}</td>
-            <td>{{ item.money }}</td>
+            <td data-label="名稱">{{ item.name }}</td>
+            <td data-label="蓄力等級">{{ item.leave }}</td>
+            <td data-label="季節">{{ item.time }}</td>
+            <td data-label="釣魚場所">
+              <p>
+                {{ item.place }}
+              </p>
+            </td>
+            <td data-label="出貨金額">{{ item.money }}</td>
           </tr>
         </tbody>
       </table>
@@ -205,6 +209,10 @@ const notFishs = ref([
   .tab-content{
     background-image: url(@/assets/img/backgroundImg/manage.jpg);
     border-radius: 10px;
+
+    img{
+      width: 100%;
+    }
   }
 }
 .nav-link{
@@ -224,4 +232,35 @@ tbody tr:nth-child(2n){
 tbody tr:nth-child(2n-1){
   background-color: #fff;
 }
+@media screen and (max-width: 600px) {
+      table{
+        border: none;
+        thead{
+          display: none;
+        }
+        tr{
+          display: block;
+          margin-bottom: 10px;
+          text-align: right;
+          position: relative;
+          td{
+            display: block;
+            border: 1px solid #ddd;
+          }
+        }
+      }
+      table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 5%;
+      }
+  }
+  @media screen and (max-width:360px) {
+    td{
+      p{
+        width: 50%;
+        margin-left: auto;
+      }
+    }
+  }
 </style>
