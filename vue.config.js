@@ -1,3 +1,4 @@
 module.exports = {
-  publicPath: "./" 
+  publicPath: "./",
+  publicPath: "/game-raiders-test/"
  };
