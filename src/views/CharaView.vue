@@ -138,6 +138,7 @@ const filterInfo = computed(() => {
     flex-wrap: wrap;
     .chara-cards{
         justify-content: space-around;
+        margin: 0 auto;
         .card-content{
             height: auto;
             padding: 5px;

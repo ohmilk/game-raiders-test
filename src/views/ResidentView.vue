@@ -295,7 +295,7 @@ const filterRes = computed(() => {
   <Modal>
     <template #header>{{ place }}</template>
     <div class="res-cotent row" v-if="filterRes.length > 0">
-      <div v-for="info of filterRes" :key="info.name" class="card col-12 col-lg-4">
+      <div v-for="info of filterRes" :key="info.name" class="card d-flex col-12 col-lg-4">
         <div class="card-img d-flex">
           <img class="d-shadow" :src="require(`../assets/img/resident/resident-img${info.number}.png`)" alt="">
         </div>
@@ -426,11 +426,14 @@ const filterRes = computed(() => {
       border: none;
       background-color: rgb(253, 253, 253, 0.1);
       padding: 0;
+      justify-content: center;
+      align-items: center;
 
       .card-img{
         width: 100%;
         height: 60%;
         align-items: center;
+        justify-content: center;
         img{
           max-height: 90%;
           max-width: 90%;
@@ -438,7 +441,8 @@ const filterRes = computed(() => {
       }
 
       .card-info{
-        width: 100%;
+        width: 90%;
+        height: 40%;
         border: 3px solid #BAE2F1;
         position: relative;
         display: flex;
@@ -473,6 +477,7 @@ const filterRes = computed(() => {
         }
         .card-info{
           width: 70%;
+          height: 90%;
         }
       }
     }

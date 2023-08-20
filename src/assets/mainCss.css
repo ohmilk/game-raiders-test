@@ -33,3 +33,8 @@ main{
 .d-shadow{
     filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.6));
 }
+
+.router-link-active{
+    background-color: #fadbce;
+    border-radius: 10px;
+}

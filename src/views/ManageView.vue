@@ -45,6 +45,9 @@ import Title from "@/components/Title.vue";
         transform: translateY(-6px);
       }
     }
+    .link.router-link-active{
+      box-shadow: 0 0 20px #a12f2d;
+    }
     @media screen and (max-width: 420px) {
       .link{
       font-size: 16px;
