@@ -47,7 +47,7 @@ const changeShow = () => {
     .header{
         height: 100px;
         position: relative;
-        z-index: 1;
+        z-index: 999;
         padding: 10px 20px;
         display: flex;
         justify-content: center;
