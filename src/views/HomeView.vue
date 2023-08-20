@@ -24,7 +24,7 @@
       .logo{
         width: 40%;
         opacity: 1;
-        position: absolute;
+        position: relative;
         top: 50%;
         left: 5%;
         transform: translateY(-50%);
