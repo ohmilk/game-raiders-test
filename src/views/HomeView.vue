@@ -27,7 +27,7 @@
         position: absolute;
         top: 50%;
         left: 5%;
-        transform: translate3D( 0, -50%, 0);
+        transform: translateY( 0, -50%, 0);
         animation: logoEmerge 5S, overTurn 5s 5s infinite ;
         animation-fill-mode: forwards;
       }
@@ -66,13 +66,13 @@
     }
     @keyframes overTurn {
       0%{
-        transform: rotateY(0deg) translateY(0, -50%, 0);
+        transform: rotateY(0deg) translate3D(0, -50%, 0);
       }
       50%{
-        transform: rotateY(180deg) translateY(0, -50%, 0);
+        transform: rotateY(180deg) translate3D(0, 50%, 0);
       }
       100%{
-        transform: rotateY(0deg) translateY(0, -50%, 0);
+        transform: rotateY(0deg) translate3D(0, -50%, 0);
       }
     }
   }
