@@ -138,7 +138,7 @@ const festivals = ref([
                 info: "綠心以上結婚對象會從鎮長那裡拿邀請函，在指定時間前往指定場所。"
             },
             {
-                name: "耶誕節禮物（隱藏）",
+                name: "耶誕節禮物",
                 date: 25,
                 time: "PM9:00 ～AM0:00",
                 info: "先準備好襪子，PM9:00 之後托馬斯會把禮物放進你的襪子裡。"
@@ -254,7 +254,7 @@ watch(nowSeason, () => {
               :key="lastgrid"
             ></div>
           </div>
-          <div class="fes" v-if="nowFes">
+          <div class="fes d-flex mt-2" v-if="nowFes">
             <div class="info d-flex" v-for="fes of nowFes" :key="fes">
               <h5>{{ fes.name }}</h5>
               <span v-if="fes.place">地點：{{ fes.place }}</span>
@@ -302,7 +302,6 @@ watch(nowSeason, () => {
       border: 5px solid #c0be9f;
       border-radius: 10px;
       .body-title {
-        height: 10%;
         justify-content: space-around;
         .week {
           width: 13%;
@@ -322,13 +321,13 @@ watch(nowSeason, () => {
         }
       }
       .days {
-        height: 65%;
+        height: 55%;
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
         .grid {
           width: 13%;
-          height: 12%;
+          height: 14%;
           background-color: #E0CA68;
           border-radius: 10px;
           &:nth-child(7n+1){
@@ -396,9 +395,9 @@ watch(nowSeason, () => {
         }
       }
       .fes{
-          height: 25%;
+          justify-content: center;
           .info{
-            justify-content: center;
+            width: 100%;
             align-items: center;
             flex-direction: column;
             span, h5{
